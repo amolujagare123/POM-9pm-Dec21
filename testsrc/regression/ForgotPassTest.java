@@ -6,19 +6,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import pages.ForgotPass;
 import pages.Login;
+import util.OpenUrl;
 
-public class ForgotPassTest {
+public class ForgotPassTest extends OpenUrl {
 
     @Test
     public void forgotPassTest()
     {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-
-        driver.get("http://[::1]/ip/index.php/sessions/login");
-
-        Login login = new Login(driver);
+       Login login = new Login(driver);
 
         login.clickForgotPass();
 
